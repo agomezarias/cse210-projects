@@ -1,3 +1,6 @@
+Fixed code to load properly
 5/14/2023
 What did I accomplish today that made a difference?
-Fixed code to load properly
+5/15/2023
+What did I accomplish today that made a difference?
+journal fix
