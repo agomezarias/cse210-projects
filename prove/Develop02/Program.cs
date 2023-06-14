@@ -80,10 +80,6 @@ class Program
                 Console.WriteLine("!!Have a good rest of your day!!");
             }
 
-            else
-            {
-                Console.WriteLine("Please enter a valid number");
-            } 
         }
         return;
     }
