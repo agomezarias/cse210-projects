@@ -4,6 +4,8 @@ public class ReflectionActivity : Activity
 {
     private string _reflectPrompts;
     private string _reflectQuestions;
+   
+   
     public ReflectionActivity(string name, string description, int seconds,
     string reflectPrompt, string reflectQuestion) : base(name, description, seconds)
     {

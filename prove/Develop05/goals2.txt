@@ -1,0 +1,4 @@
+0
+Simple Goal: Get better at public speaking: Speak whenever I am asked to at church and at work.: 50: False
+Eternal Goal: Study and pray daily: Study for at least 15 minutes.: 25: False
+Checklist Goal: Attend the temple: Attend and perform any ordinance.: System.Func`1[System.Int32]: 3: 500
