@@ -7,8 +7,6 @@ public abstract class Goal
     private string _description = "";
     private int _score = 0;
 
-    
-
 
     public Goal(string goalType, string name, string description, int score)
     {
