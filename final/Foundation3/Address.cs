@@ -7,7 +7,6 @@ public class Address
     private string _state;
     private string _zipCode;
     private string _country;
-    private bool _isInUSA;
 
     public Address(string street, string city, string state, string zipcode, string country)
     {
@@ -23,18 +22,4 @@ public class Address
         return $"{_street}\n{_city}, {_state} {_zipCode}\n{_country.ToUpper()}";
     }
 
-    public bool IsAddressUSA()
-    {
-        if (_country.ToUpper() == "USA" || _country.ToUpper() == "US" || _country.ToUpper() == "United States")
-        {
-            _isInUSA = true;
-        }
-
-        else
-        {
-            _isInUSA = false;
-        }
-
-        return _isInUSA;
-    }
 }

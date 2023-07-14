@@ -4,7 +4,7 @@ public class Customer
 {
     private string _customerName;
     private Address _customerAddress;
-
+    private string _shippingLabel = "";
 
     public Customer(string customerName, Address customerAddress)
     {
@@ -17,13 +17,15 @@ public class Customer
         return _customerName;
     }
 
-    public bool GetCountry()
+    public bool IsAddressUSA()
     {
-        return _customerAddress.GetCountry();
+        return _customerAddress.IsAddressUSA();
     }
 
-    public void GetShippingLabel()
+    public string GetCustomerInfo()
     {
-        Console.WriteLine($"{_customerName}\n {_customerAddress.GetAddressString()}");
+        _shippingLabel = $"{_customerName}\n{_customerAddress.GetAddressString()}";
+
+        return _shippingLabel;
     }   
 }

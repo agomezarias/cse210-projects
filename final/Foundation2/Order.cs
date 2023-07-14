@@ -5,12 +5,14 @@ public class Order
 {
     private Customer _customerInfo;
     private List<Product> _products = new List<Product>();
-    
+    private string _packingLabel = "";
     private double _totalWithShipping = 0;
+    DateTime localDate = DateTime.Now;
 
-    public Order(Customer customerInfo)
+    public Order(Customer customerInfo, List<Product> products)
     {
         _customerInfo = customerInfo;
+        _products = products;
     }
 
     public void AddProduct(Product product)
@@ -20,12 +22,19 @@ public class Order
 
     public void GetPackingLabel()
     {
+        Console.WriteLine();
+        Console.WriteLine("----------------Packing Label-------------");
+        Console.WriteLine();
+
         foreach (Product product in _products)
         {
-            string _packingLabel = "";
-            _packingLabel += $"ProductName:{product.GetProductName()}, ID:{product.GetProductID()}";
+            _packingLabel += $"ProductName:{product.GetProductName()}, ID:{product.GetProductID()}\n";
         }
+        
+        Console.WriteLine(_packingLabel);
+        // return _packingLabel;
     }
+    
 
     public double TotalPlusSHipping()
     {
@@ -34,7 +43,7 @@ public class Order
             _totalWithShipping += product.ProductPriceTotal();
         }
 
-        if (_customerInfo.GetCountry())
+        if (_customerInfo.IsAddressUSA())
         {
             _totalWithShipping = _totalWithShipping + 5;
         }
@@ -42,11 +51,15 @@ public class Order
         {
             _totalWithShipping = _totalWithShipping + 35;
         }
-
+    
 
         return _totalWithShipping;
     }
 
     //TODO Finish making the receipt display and test it. 
+    public void DisplayOrderReceipt()
+    {
+        
+    }
 
 }
