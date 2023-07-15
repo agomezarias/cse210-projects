@@ -22,9 +22,13 @@ public class Customer
         return _customerAddress.IsAddressUSA();
     }
 
-    public string GetCustomerInfo()
+    public string GetShippingLabel() 
     {
-        _shippingLabel = $"{_customerName}\n{_customerAddress.GetAddressString()}";
+        _shippingLabel = "\n----------------Shipping Label-------------\n";
+
+        _shippingLabel += $"Order For:\n{_customerName}\n{_customerAddress.GetAddressString()}";
+
+        _shippingLabel += "\n-------------------------------------------";
 
         return _shippingLabel;
     }   
