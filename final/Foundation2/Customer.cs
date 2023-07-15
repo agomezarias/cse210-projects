@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 public class Customer
 {
@@ -24,9 +25,12 @@ public class Customer
 
     public string GetShippingLabel() 
     {
+        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
+
         _shippingLabel = "\n----------------Shipping Label-------------\n";
 
-        _shippingLabel += $"Order For:\n{_customerName}\n{_customerAddress.GetAddressString()}";
+        _shippingLabel += $"Order For:\n{textInfo.ToTitleCase(_customerName)}\n{_customerAddress.GetAddressString()}";
 
         _shippingLabel += "\n-------------------------------------------";
 

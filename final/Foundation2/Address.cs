@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 public class Address
 {
@@ -20,7 +21,9 @@ public class Address
 
     public string GetAddressString()
     {
-        return $"{_street}\n{_city}, {_state} {_zipCode}\n{_country.ToUpper()}";
+        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
+        return $"{textInfo.ToTitleCase(_street)}\n{textInfo.ToTitleCase(_city)}, {_state.ToUpper()} {_zipCode}\n{_country.ToUpper()}";
     }
 
     public bool IsAddressUSA()

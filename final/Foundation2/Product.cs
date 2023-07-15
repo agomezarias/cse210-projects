@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 public class Product
 {
@@ -17,13 +18,16 @@ public class Product
 
     public string GetProductName()
     {
-        return _productName;
+        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
+        return textInfo.ToTitleCase(_productName);
     }
 
 
     public string GetProductID()
     {
-        return _productID;
+        
+        return _productID.ToUpper();
     }
 
 

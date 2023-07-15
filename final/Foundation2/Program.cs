@@ -9,7 +9,7 @@ class Program
 
         //FIRST CUSTOMER
 
-        Address address1 = new Address("2345 Florence St", "Aurora", "CO", "80010", "USA");
+        Address address1 = new Address("2345 florence St", "aurora", "Co", "80010", "USA");
 
         Customer customer1 = new Customer("Alberto Gomez", address1);
 
@@ -73,5 +73,5 @@ class Program
         Console.WriteLine(customer3.GetShippingLabel());//Create a Shipping Label
 
     }
-    
+
 }
