@@ -73,7 +73,5 @@ class Program
         Console.WriteLine(customer3.GetShippingLabel());//Create a Shipping Label
 
     }
-
-
-
+    
 }

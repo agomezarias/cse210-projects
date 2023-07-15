@@ -96,7 +96,7 @@ public class Order
         _receipt += $"\n\n           {_localDate}";
         _receipt += $"\n\n-------------------------------------------\n";
         _receipt += $"QTY     ITEM                    PRICE\n";
-        _receipt += $"-------------------------------------------";
+        _receipt += $"-------------------------------------------\n";
 
         foreach (Product product in _products)
         {
@@ -107,7 +107,7 @@ public class Order
         _receipt += $"\n\nSubtotal:                       ${TotalPlusShipping():0.00}";
         _receipt += $"\nTax: (8%)                       ${AddTax():0.00}";
         _receipt += $"\nTotal:                          ${TotalSalesPrice():0.00}";
-        _receipt += $"\n-------------------------------------------\n";
+        _receipt += $"\n\n-------------------------------------------\n";
         _receipt += $"          !!HAVE A BLESSED DAY!!\n";
         _receipt += $"-------------------------------------------";
 
