@@ -9,6 +9,8 @@ public class Address
     private string _zipCode;
     private string _country;
     private bool _isInUSA;
+    TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
 
     public Address(string street, string city, string state, string zipcode, string country)
     {
@@ -21,8 +23,6 @@ public class Address
 
     public string GetAddressString()
     {
-        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-
         return $"{textInfo.ToTitleCase(_street)}\n{textInfo.ToTitleCase(_city)}, {_state.ToUpper()} {_zipCode}\n{_country.ToUpper()}";
     }
 
@@ -40,4 +40,5 @@ public class Address
 
         return _isInUSA;
     }
+    
 }

@@ -7,6 +7,8 @@ public class Product
     private string _productID;
     private double _price;
     private int _quantity;
+    TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
 
     public Product(string productName, string productID, double price, int quantity)
     {
@@ -18,11 +20,8 @@ public class Product
 
     public string GetProductName()
     {
-        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-
         return textInfo.ToTitleCase(_productName);
     }
-
 
     public string GetProductID()
     {
@@ -30,18 +29,15 @@ public class Product
         return _productID.ToUpper();
     }
 
-
     public double GetPrice()
     {
         return _price;
     }
 
-
     public int GetQuantity()
     {
         return _quantity;
     }
-
 
     public double ProductPriceTotal()
     {

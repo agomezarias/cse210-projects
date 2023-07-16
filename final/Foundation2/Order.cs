@@ -1,26 +1,24 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 public class Order
 {
     private Customer _customerInfo;
     private List<Product> _products = new List<Product>();
     private string _packingLabel = "";
+    private string _shippingLabel = "";
     private string _shippingCost = "";
     private double _totalWithShipping = 0;
     private double _subtotalPlusTax;
     private string _receipt;
     DateTime _localDate = DateTime.Now;
 
+
     public Order(Customer customerInfo, List<Product> products)
     {
         _customerInfo = customerInfo;
         _products = products;
-    }
-
-    public void AddProduct(Product product)
-    {
-        _products.Add(product);
     }
 
     public string GetPackingLabel()
@@ -37,7 +35,6 @@ public class Order
 
         _packingLabel += "\n-------------------------------------------";
         
-        // Console.WriteLine(_packingLabel);
         return _packingLabel;
     }
 
@@ -55,7 +52,6 @@ public class Order
         return _shippingCost;
     }
     
-
     public double TotalPlusShipping()
     {
         foreach (Product product in _products)
@@ -72,7 +68,6 @@ public class Order
             _totalWithShipping = _totalWithShipping + 35;
         }
     
-
         return _totalWithShipping;
     }
 
@@ -114,4 +109,14 @@ public class Order
         return _receipt; 
     }
 
+    public string GetShippingLabel() 
+    {
+        _shippingLabel = "\n----------------Shipping Label-------------\n";
+
+        _shippingLabel += $"Order For:\n{_customerInfo.GetCustomerName()}\n{_customerInfo.GetCustomerAddress()}";
+
+        _shippingLabel += "\n-------------------------------------------";
+
+        return _shippingLabel;
+    }   
 }

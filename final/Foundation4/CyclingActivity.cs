@@ -4,6 +4,7 @@ public class Cycling : Activity
 {
     private double _speed;
 
+
     public Cycling(DateTime date, int length, double speed) : base(date, length)
     {
         _speed = speed;

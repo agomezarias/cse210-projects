@@ -23,12 +23,6 @@ class Program
 
         Order order1 = new Order(customer1, product1);//Create new order
 
-        Console.WriteLine(order1.GetPackingLabel());//Create the packing list
-
-        Console.WriteLine(order1.DisplayOrderReceipt());//Create a recipt
-
-        Console.WriteLine(customer1.GetShippingLabel());//Create a Shipping Label
-
 
         //SECOND CUSTOMER
 
@@ -43,12 +37,6 @@ class Program
         };
 
         Order order2 = new Order(customer2, product2);//Create new order.
-
-        Console.WriteLine(order2.GetPackingLabel());//Create the packing list
-
-        Console.WriteLine(order2.DisplayOrderReceipt());//Create a recipt
-
-        Console.WriteLine(customer2.GetShippingLabel());//Create a Shipping Label
 
 
         //THIRD CUSTOMER
@@ -66,12 +54,45 @@ class Program
 
         Order order3 = new Order(customer3, product3);//Create new order.
 
-        Console.WriteLine(order3.GetPackingLabel());//Create the packing list
 
-        Console.WriteLine(order3.DisplayOrderReceipt());//Create a recipt
+        //DISPLAY EACH ORDER WITH RELATED INFO.
 
-        Console.WriteLine(customer3.GetShippingLabel());//Create a Shipping Label
+        Order[] orders = {order1, order2, order3};
+        
+        foreach (Order order in orders)
+        {
+            Console.WriteLine(order.GetPackingLabel());
 
+            Console.WriteLine(order.DisplayOrderReceipt());
+
+            Console.WriteLine(order.GetShippingLabel());
+
+        }
     }
 
 }
+        //TESTING  ORDERS TO CONSOLE. REPLACED WITH FOREACH 
+
+        // Console.WriteLine(order1.GetPackingLabel());//Create the packing list
+
+        // Console.WriteLine(order1.DisplayOrderReceipt());//Create a recipt
+
+        // Console.WriteLine(customer1.GetShippingLabel());//Create a Shipping Label
+
+
+
+        // Console.WriteLine(order2.GetPackingLabel());//Create the packing list
+
+        // Console.WriteLine(order2.DisplayOrderReceipt());//Create a recipt
+
+        // Console.WriteLine(customer2.GetShippingLabel());//Create a Shipping Label
+
+
+
+        // Console.WriteLine(order3.GetPackingLabel());//Create the packing list
+
+        // Console.WriteLine(order3.DisplayOrderReceipt());//Create a recipt
+
+        // Console.WriteLine(customer3.GetShippingLabel());//Create a Shipping Label
+
+        // Customer[] customer = {customer1, customer2, customer3};

@@ -4,6 +4,7 @@ public class Swimming : Activity
 {
     private int _laps;
 
+
     public Swimming(DateTime date, int length, int laps) : base(date, length)
     {
         _laps = laps;

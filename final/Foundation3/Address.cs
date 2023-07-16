@@ -1,4 +1,6 @@
 using System;
+using System.Globalization;
+
 
 public class Address
 {
@@ -7,6 +9,8 @@ public class Address
     private string _state;
     private string _zipCode;
     private string _country;
+    TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
 
     public Address(string street, string city, string state, string zipcode, string country)
     {
@@ -19,7 +23,6 @@ public class Address
 
     public string GetAddressString()
     {
-        return $"{_street}\n{_city}, {_state} {_zipCode}\n{_country.ToUpper()}";
+        return $"{textInfo.ToTitleCase(_street)}, {textInfo.ToTitleCase(_city)}, {_state.ToUpper()} {_zipCode}, {_country.ToUpper()}";
     }
-
 }

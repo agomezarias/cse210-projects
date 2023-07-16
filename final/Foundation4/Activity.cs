@@ -5,6 +5,7 @@ public class Activity
     private DateTime _date;
     protected int _length; //In minutes
 
+
     public Activity(DateTime date, int length)
     {
         _date = date;
